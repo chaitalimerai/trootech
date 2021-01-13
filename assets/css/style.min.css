@@ -1,0 +1,600 @@
+﻿@import url(//db.onlinewebfonts.com/c/0d49fc455f4a8951a42daf952412a713?family=Helvetica+Neue);
+@import url('./custom_components.css');
+/* ============== colors =============== */
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("//db.onlinewebfonts.com/t/0d49fc455f4a8951a42daf952412a713.eot");
+    src: url("//db.onlinewebfonts.com/t/0d49fc455f4a8951a42daf952412a713.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/0d49fc455f4a8951a42daf952412a713.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/0d49fc455f4a8951a42daf952412a713.woff") format("woff"), url("//db.onlinewebfonts.com/t/0d49fc455f4a8951a42daf952412a713.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/0d49fc455f4a8951a42daf952412a713.svg#Helvetica Neue") format("svg");
+}
+
+/* ============== colors =============== */
+
+/* ============== colors =============== */
+
+:root {
+    --white: #ffffff;
+    --white100: #fde9e9;
+    --dark: #3a3a3a;
+    --blue: #223d57;
+    --primary: #00a7b4;
+    --gray: #eff1f3;
+    --gray100: #6e6e6e;
+    --danger: #eff1f3;
+    --purple: #8c248a;
+    --pnik: #d94293;
+    /* font variables */
+    --helveticaNeue: 'Helvetica Neue', sans-serif;
+    --fontLight: 100;
+    --fontRegular: 300;
+    --fontMedium: 400;
+    --fontSemiBold: 600;
+    --fontBold: 700;
+    --fontExtraBold: 800;
+}
+
+/* ============== ends: colors =============== */
+
+/* ============== base css =============== */
+
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: var(--helveticaNeue);
+    font-size: 16px;
+    font-weight: var(--fontLight);
+    color: var(--gray100);
+    line-height: 1.5;
+    overflow: hidden;
+    background: var(--white);
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--helveticaNeue);
+    font-weight: var(--fontLight);
+    color: var(--gray100);
+    margin: 0;
+}
+
+h1 {
+    font-weight: var(--fontBold);
+}
+
+h5, h1, h3 {
+    color: var(--blue);
+    font-weight: var(--fontMedium);
+}
+
+h5 {
+    font-size: 22px;
+    font-weight: var(--fontBold);
+}
+
+p {
+    font-family: var(--helveticaNeue);
+    font-weight: var(--fontLight);
+    color: var(--gray100);
+    font-size: 14px;
+    margin: 0;
+}
+
+/* ===============form css================ */
+
+button, input, textarea {
+    outline: 0 !important;
+}
+
+/* ends: ===============form css================ */
+
+/* scrolll bar */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0px transparent;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #bebebe;
+    cursor: pointer !important;
+}
+
+/* ============== Ends: base css =============== */
+
+/* ============== main classes css ============== */
+
+.main_wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.main_contnet {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.common_section {
+    margin-bottom: 50px;
+}
+
+/* ============== main header ============== */
+
+.main_header .custom_nav {
+    align-items: center;
+}
+
+.main_header .logo {
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+}
+
+.main_header .toggle_bars_btn {
+    border: 0;
+    background: transparent !important;
+    padding: 0;
+    box-shadow: none !important;
+}
+
+.main_header .toggle_bars_btn .toggle_icons {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.main_header .custom_nav .nav-item {
+    padding: 0 10px;
+}
+
+.main_header .custom_nav .nav-link {
+    padding: 0;
+    font-size: 14px;
+    color: rgb(35, 35, 35);
+    line-height: 1.333;
+    text-transform: capitalize;
+}
+
+.main_header .custom_nav .nav-link:hover, .main_header .custom_nav .nav-link:active, .main_header .custom_nav .nav-link:focus, .main_header .custom_nav .nav-link.active {
+    color: var(--primary);
+}
+
+/* ============== Enda: main header ============== */
+
+/* =====================primary nav===================== */
+
+.primary_nav {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -800px;
+    z-index: 9;
+    background-color: #ffffff;
+    box-shadow: -3px 1px 13px 0px #e2e2e2;
+    border-right: 1px solid var(--gray);
+    transition: all 500ms ease;
+}
+
+.primary_nav.toggleActive {
+    left: 0;
+    display: flex;
+}
+
+.main_header .logo_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.primary_nav .content-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+}
+
+.primary_nav .nav-brand {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.primary_nav .nav-brand span {
+    padding-left: 10px;
+    font-weight: var(--fontSemiBold);
+    color: var(--black);
+}
+
+.primary_nav .custom_nav {
+    flex-direction: column;
+    display: flex;
+}
+
+.primary_nav .custom_nav .nav-item {
+    margin: 0;
+    padding: 0;
+}
+
+/* ============== ends: primary_nav css ============== */
+
+/* ============== banner slider css ============== */
+
+.banner_slider {
+    width: 100%;
+    height: 100%;
+}
+
+.banner_slider .slider_row {
+    align-items: center;
+    width: 100%;
+}
+
+.banner_slider .slider_row p {
+    margin: 15px 0;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+    right: 45px !important;
+    left: auto !important;
+}
+
+.banner_slider .swiper-pagination {
+    text-align: right;
+}
+
+.banner_slider .swiper-pagination-bullet {
+    margin: 0 7px !important;
+    outline: 0 !important;
+}
+
+.banner_slider .swiper-pagination-bullet {
+    background: var(--primary);
+    opacity: 1;
+    height: 5px;
+    width: 5px;
+    box-shadow: 0px 0px 2px 4px transparent;
+}
+
+.banner_slider .swiper-pagination-bullet-active {
+    opacity: 1;
+    height: 6px;
+    width: 6px;
+    box-shadow: 0px 0px 2px 4px #00a7b436;
+}
+
+/* ============== Ends: banner slider css ============== */
+
+/* ============== tour section css ============== */
+
+.tour_section .tour_block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.tour_section .tour_block .video_icon {
+    height: 150px;
+    width: 150px;
+    object-fit: contain;
+}
+
+.tour_section .tour_sub_block {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.common_section .title {
+    position: relative;
+    padding-left: 60px;
+}
+
+.common_section .title span {
+    height: 1px;
+    left: 0;
+    position: absolute;
+    width: 50px;
+    top: 13px;
+    background-color: var(--blue);
+}
+
+.tour_section .tour_sub_block p {
+    font-size: 11px;
+    line-height: 1.2;
+    margin-top: 10px;
+}
+
+/* ============== Ends: tour section css ============== */
+
+/* ============== team section css ============== */
+
+.team_section {
+    background-image: url("../images/service_bg.png");
+    background-position: top;
+    width: 100%;
+    padding: 70px;
+    text-align: center;
+}
+
+.team_section h5, .team_section p {
+    color: var(--white100);
+    font-weight: var(--fontMedium);
+}
+
+.team_section p {
+    color: var(--white100);
+    font-size: 11px;
+    font-weight: var(--fontLight);
+    opacity: 0.8;
+    margin: 10px;
+}
+
+.team_section .team_rows {
+    padding-top: 20px;
+}
+
+.team_section .team_box_mb {
+    margin-bottom: 20px;
+}
+
+.team_section .common_team_box {
+    padding: 25px 15px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: 0px 20px 41.5px 8.5px rgba(0, 0, 0, 0.05);
+}
+
+.team_section .team_box1 {
+    background-color: rgb(241, 101, 102);
+}
+
+.team_section .team_box2 {
+    background-color: rgb(140, 36, 138);
+}
+
+.team_section .team_box3 {
+    background-color: rgb(217, 66, 147);
+}
+
+.team_section .team_box_row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.team_section .common_team_box .icons {
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+}
+
+.team_section .common_team_box .stars {
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+}
+
+.team_section .team_content_row {
+    text-align: left;
+    padding: 10px;
+    color: var(--white100);
+}
+
+.team_section .team_content_row h6 {
+    color: var(--white100);
+    font-size: 14px;
+    font-weight: var(--fontMedium);
+}
+
+.team_section .team_content_row p {
+    margin: 0;
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+/* ============== Ends: team section css ============== */
+
+/* ============== intent section css ============== */
+
+.intent_section .intent_rows {
+    padding-top: 40px;
+}
+
+.intent_section .intent_card_mb {
+    margin-bottom: 20px;
+}
+
+.intent_section .intent_card {
+    padding: 0;
+    position: relative;
+    z-index: 2;
+    background: transparent;
+    height: 100%;
+}
+
+.intent_section .intent_card .card-body {
+    margin: 0 15px;
+    z-index: -1;
+    border-width: 2px;
+    border-color: rgb(239, 241, 243);
+    border-style: solid;
+    border-radius: 0 0 15px 15px;
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+}
+
+.intent_section .intent_card .img_layer {
+    position: relative;
+    z-index: 3;
+}
+
+.intent_section .img_layer h5 {
+    position: absolute;
+    z-index: 2;
+    bottom: 10px;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    color: var(--white100);
+    font-weight: var(--fontMedium);
+}
+
+.intent_section .card-body p {
+    font-size: 12px;
+}
+
+/* ============== Ends: intent section css ============== */
+
+/* ============== feature ntent section css ============== */
+
+.feature_section h5, .feature_section p {
+    text-align: center;
+}
+
+.feature_section p {
+    font-size: 12px;
+    margin: 15px 0;
+}
+
+.feature_section .feature_row {
+    margin-top: 40px;
+}
+
+.feature_section .common_feature_block {
+    margin: 0 -35px;
+}
+
+.feature_section .feature_block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+.feature_section .features_right_blocks .feature_block {
+    align-items: flex-start;
+    /* padding-left: 175px; */
+    margin: 0 -20px;
+}
+.feature_section .features_right_blocks .feature_block p {
+    white-space: nowrap;
+    text-align: left;
+}
+.feature_section  .feature_left_center_block {
+    margin: 0 -10px;
+}
+.feature_section .features_right_blocks .feature_right_center_block {
+    margin: 0 20px;
+}
+
+
+.feature_section .feature_block .feature_img {
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+}
+
+.feature_section .feature_block h6 {
+    color: var(--dark);
+    font-weight: var(--fontBold);
+    font-size: 15px;
+    position: relative;
+    white-space: nowrap;
+}
+.feature_section .feature_block h6 div {
+    height: 1px;
+    background-color: var(--gray);
+    width: 50px;
+    position: absolute;
+    top: 9px;
+    right: -54px;
+}
+.feature_section .features_right_blocks .feature_block h6 div{
+    right: auto;
+    left: -58px;
+    transform: rotate(180deg);
+}
+.feature_section .feature_block h6.active div {
+    background-color: var(--primary);
+}
+.feature_section .feature_block h6 div::before {
+    content: "";
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background-color: var(--gray);
+    position: absolute;
+    top: -2px;
+    right: 0;
+    
+}
+.feature_section .feature_block h6.active div::before {
+    background-color: var(--primary);
+    box-shadow: 0px 0px 7px 2px #00a7b4;
+}
+
+.feature_section .feature_block p {
+    margin: 0 0 5px 0;
+    text-align: right;
+}
+.feature_section .feature_block.features_right_blocks p {
+    text-align: left;
+}
+
+.feature_section .features_blocks {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 50px;
+}
+.feature_section .features_blocks.features_right_blocks {
+   
+    padding-left: 100px;
+}
+.feature_section .feature_main_img {
+    max-width: 400px;
+    height: 400px;
+    object-fit: contain;
+}
+.feature_section .social_btns {
+    margin: 70px 0;
+    justify-content: center
+}
+.feature_section .social_btns button{
+    border: 0;
+    background: transparent;
+}
+.feature_section .social_btns button:hover{
+    opacity: 0.9;
+}
+.feature_section .social_btns button img{
+    max-width: 170px;
+}
+
+/* ============== Ends: feature section css ============== */
